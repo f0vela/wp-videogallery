@@ -1,5 +1,5 @@
 	<?php 
-		if($_POST['detalles_hidden'] == 'Y') {
+		if($_POST['vg_hidden'] == 'Y') {
 			
 			$yt_name = $_POST['yt_name'];
 			update_option('yt_name',$yt_name);
@@ -57,7 +57,7 @@
 	}
 
 	?>
-	<link href="<?php echo WP_PLUGIN_URL; ?>/VideoGallery/css/vg_admin.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo WP_PLUGIN_URL; ?>/css/vg_admin.css" rel="stylesheet" type="text/css"/>
 	<div class="wrap">
 	<div id="icon-options-general" class="icon32"><br></div>
 	<h2>Video Galeria - Administraci&oacute;n</h2>
@@ -112,7 +112,7 @@
 						<input type="radio" name="vmo_tipo" id="vmo_canal" value="canal" <?php if($vmo_tipo == 'canal'){ echo 'checked="checked"'; } ?> /> Canal
 					</p>
 				
-					<input type="hidden" name="detalles_hidden" value="Y"/>	
+					<input type="hidden" name="vg_hidden" value="Y"/>	
 					<div>
 						<p class="submit">
 						<input type="submit" name="Submit" value="<?php _e('Actualizar Configuraciones', 'oscimp_trdom' ) ?>" />

@@ -7,7 +7,7 @@
 	Version: 0.0.1
 	Author URI: http://www.frisleyvelasquez.com
 	*/
-	function my_admin_init() {
+	function vg_admin_init() {
 		//$pluginfolder = get_bloginfo('url') . '/' . PLUGINDIR . '/' . dirname(plugin_basename(__FILE__));
 		$pluginfolder = plugin_dir_url(__FILE__).'VideoGallery';
 		
@@ -30,22 +30,22 @@
 		return $myarr['v'];
 	}
 	
-	function recentVideos()
+	function vg_recentVideos()
 	{
 		$vg_activo	= get_option('vg_activo');
 		
 		if($vg_activo == 'youtube')
 		{
-			$rvideos = recentYoutubeVideos();
+			$rvideos = vg_recentYoutubeVideos();
 		}elseif($vg_activo == 'vimeo')
 		{
-			$rvideos = recentVimeoVideos();
+			$rvideos = vg_recentVimeoVideos();
 		}
 		
 		return $rvideos;
 	}
 	
-	function recentYoutubeVideos(){
+	function vg_recentYoutubeVideos(){
 		
 		$yt_name		= get_option('yt_name');
 		$yt_ancho		= get_option('yt_ancho');
@@ -134,7 +134,7 @@
         return $lyt;
 	}
 	
-	function recentVimeoVideos(){
+	function vg_recentVimeoVideos(){
 		
 		$vmo_name		= get_option('vmo_name');
 		$vmo_ancho		= get_option('vmo_ancho');
@@ -174,7 +174,7 @@
 				jQuery('#vgal_youtube_video_'+clicked).css('background-color','#f0f0f0');
 			}
 		</script>
-		<link href="<?php echo plugin_dir_url(__FILE__).'VideoGallery'; ?>/css/vg_default.css" rel="stylesheet" type="text/css"/>
+		<link href="<?php echo plugin_dir_url(__FILE__); ?>/css/vg_default.css" rel="stylesheet" type="text/css"/>
 		<?php
 		$ryt = '<div id="vgal_vimeo">';
         foreach($search as $video)
@@ -212,7 +212,7 @@
         return $lyt;
 	}
 	
-	add_action('admin_init', 'my_admin_init');
+	add_action('admin_init', 'vg_admin_init');
 	add_action('admin_menu', 'vg_admin_actions');
-	add_shortcode('video_gallery', 'recentVideos');
+	add_shortcode('video_gallery', 'vg_recentVideos');
 ?>
