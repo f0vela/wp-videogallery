@@ -1,0 +1,19 @@
+/* YOUTUBE CSS */
+#vgal_wrapper{ width: 600px; padding: 5px; font-family: Helvetica, Arial; }
+#vgal_bigvid { float: left; width: 313px; height:235px; background-color: black; }
+#vgal_youtube { float:right; width:285px;}
+		
+.vgal_youtube_video { height: 75px; padding: 0 5px 5px; }
+.vgal_youtube_video img { float: left; margin-right: 10px; }
+		
+#vgal_youtube_link a{ color: #27415F; font-size: 10px; line-height: 14px; }
+
+/* VIMEO CSS */
+#vgal_wrapper{ width: 600px; padding: 5px; font-family: Helvetica, Arial; }
+#vgal_bigvid { float: left; width: 313px; height:235px; background-color: black; }
+#vgal_vimeo { float:right; width:285px; height:<?php echo $vmo_alto.'px';?>; overflow: auto }
+		
+.vgal_vimeo_video { padding: 5px; clear: right }
+.vgal_vimeo_video img { float: left; margin-right: 10px; }
+		
+#vgal_vimeo_link a{ color: #27415F; font-size: 10px; line-height: 14px; }
